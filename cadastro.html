@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A3 Telecom - Cadastro de Cliente</title><style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    margin:0;
+    padding:20px;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+h1{
+    text-align:center;
+    color:#004aad;
+}
+
+p{
+    text-align:center;
+    color:#666;
+}
+
+label{
+    display:block;
+    margin-top:12px;
+    font-weight:bold;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    box-sizing:border-box;
+}
+
+.botoes{
+    display:flex;
+    gap:10px;
+    margin-top:25px;
+}
+
+button{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.limpar{
+    background:#999;
+    color:#fff;
+}
+
+.enviar{
+    background:#25D366;
+    color:#fff;
+}
+</style></head><body><div class="container"><h1>A3 Telecom</h1>
+<p>Conectando você ao futuro!</p><form id="cadastro"><label>Nome Completo</label>
+<input type="text" id="nome" required>
+
+<label>Telefone / WhatsApp</label>
+<input type="tel" id="telefone" required>
+
+<label>Endereço Completo</label>
+<input type="text" id="endereco" required>
+
+<label>CEP</label>
+<input type="text" id="cep" required>
+
+<label>CPF</label>
+<input type="text" id="cpf" required>
+
+<label>Plano Desejado</label>
+<select id="plano" required>
+
+<option value="">Selecione</option>
+<option>300 MB - R$ 59,99</option>
+<option>600 MB - R$ 79,99</option>
+<option>800 MB - R$ 99,99</option>
+</select><label>Data de Vencimento</label>
+<select id="vencimento" required>
+
+<option value="">Selecione</option>
+<option>05</option>
+<option>10</option>
+<option>15</option>
+<option>20</option>
+<option>25</option>
+<option>30</option>
+</select><label>Data da Instalação</label>
+<input type="date" id="instalacao">
+
+<label>Horário da Instalação</label>
+<input type="time" id="horario">
+
+<label>Nome da Rede Wi-Fi</label>
+<input type="text" id="wifi">
+
+<label>Senha da Rede Wi-Fi</label>
+<input type="text" id="senha">
+
+<div class="botoes">
+<button type="reset" class="limpar">Limpar</button>
+<button type="button" class="enviar" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
+</div></form>
+</div><script>
+function enviarWhatsApp(){
+
+let msg =
+"*=== NOVO CADASTRO DE CLIENTE ===*%0A%0A" +
+
+"👤 *Nome completo:* " + document.getElementById('nome').value + "%0A" +
+"📞 *Telefone:* " + document.getElementById('telefone').value + "%0A" +
+"📍 *Endereço:* " + document.getElementById('endereco').value + "%0A" +
+"📮 *CEP:* " + document.getElementById('cep').value + "%0A" +
+"🆔 *CPF:* " + document.getElementById('cpf').value + "%0A" +
+"📦 *Plano Escolhido:* " + document.getElementById('plano').value + "%0A" +
+"📅 *Data de Vencimento:* " + document.getElementById('vencimento').value + "%0A" +
+"🛠️ *Instalação:* " + document.getElementById('instalacao').value + " às " + document.getElementById('horario').value + "%0A" +
+"📶 *Nome do Wi-Fi:* " + document.getElementById('wifi').value + "%0A" +
+"🔑 *Senha do Wi-Fi:* " + document.getElementById('senha').value;
+
+window.open(
+"https://wa.me/5598981308032?text=" + msg,
+"_blank"
+);
+}
+</script></body>
+</html>m
